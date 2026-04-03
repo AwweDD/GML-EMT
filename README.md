@@ -1,5 +1,7 @@
 # Project Introduction
-**Title**: Gradual Machine Learning for Semi-supervised Medical Image Classification Via Evolutionary Feature Optimization, called **GML-EMT**. It is a non-i.i.d based paradigm for semi-supervised medical image classification, which gradually infers test images in a factor graph by integrating multiple high-quality evidence factors provided by evolutionary feature optimization. The framework og GML-EMT as shown in Figure 1.
+**Title**: Gradual Machine Learning for Semi-supervised Medical Image Classification Via Evolutionary Feature Optimization, called **GML-EMT**. 
+It is a non-i.i.d based paradigm for semi-supervised medical image classification, which gradually infers test images in a factor graph by integrating multiple high-quality evidence factors provided by evolutionary feature optimization. 
+The framework of GML-EMT as shown in Figure 1.
 ![framework.png](framework.png)
 **Figure 1**: Taking a 5\% labeling regime as an example, we utilize two pretrained models, fine-tune them using 5\% of the training data, and extract feature vectors from medical images and concatenate them. Then, we define two optimization sub-tasks (FET and FST) and apply EMT for collaborative optimization, refining the basic feature vectors from the perspectives of CCD and KNN based on different individual encoding schemes and evolutionary strategies. An information-sharing module is designed to facilitate EMT collaborative optimization. Finally, we extract CCD and KNN factors from the feature vectors of labeled images optimized by EMT for the test images. And then GML is used to fuse multiple optimized factors for gradual inference on the test images.
 # Instruction Manual
