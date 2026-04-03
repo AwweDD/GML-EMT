@@ -22,23 +22,31 @@ scipy 1.7.1
 threadpoolctl 3.0.0
 wincertstore 0.2
 
-**How to run your data:**
+## How to Run on Your Data
 1. **Datasets download:**
-   ISIC2018:https: //www.kaggle.com/datasets/farjanakabirsamanta/skin-cancer-dataset
+   ISIC2018: https://www.kaggle.com/datasets/farjanakabirsamanta/skin-cancer-dataset
+   
    NCT-CRC-HE-100K: https://www.kaggle.com/datasets/imrankhan77/nct-crc-he-100k
-2. **Datasets split:**
-   Randomly split these datasets into 70\%/10\%/20\% for training/validation/test. And further randomly selected 5\% and 20\% subsets from the training set as labeled data, and treating the remainder as unlabeled data, using a random seed. 
-3. **Fine-tune the pre-trained model:**
-   Fine-tune the two pre-trained models, DenseNet-121 and WRN50-2, using labeled data.
-4. **Extract multi-view feature vectors:**
-   The fine-tuned DenseNet-121 and WRN50-2 models were used to extract the feature vectors of medical images and concatenate them as the basic feature vectors. Then, the feature vectors and label information of the training/validation/test sets are saved respectively in the pkl file format for the testing of subsequent methods.
-5. **Data loader:**
-   Use the Dataloader method in the code we provide to load the extracted feature vectors and label information.
-6. **EMT optimization:**
-   Run the EMT optimization method to search for the feature optimization model.
-7. **Extraction factor:**
-   The CCD and KNN factors were extracted using the Extract_factors method and saved as pkl files.
-8. **Run the GML:**
-   Run example.py in GML.
+
+3. **Datasets split:**
+   Randomly split the datasets into 70%/10%/20% for training/validation/testing. Further randomly select 5% and 20% subsets from the training set as labeled data, and treat the remainder as unlabeled data with a fixed random seed.
+
+4. **Fine-tune the pre-trained models:**
+   Fine-tune two pre-trained models (DenseNet-121 and WRN50-2) using the labeled data.
+
+5. **Extract multi-view feature vectors:**
+   Use the fine-tuned DenseNet-121 and WRN50-2 models to extract feature vectors from medical images and concatenate them as the basic feature vectors. Then, save the feature vectors and label information of the training/validation/test sets in .pkl format separately for subsequent method testing.
+
+6. **Data loader:**
+   Use the Dataloader module in the provided code to load the extracted feature vectors and label information.
+
+7. **EMT optimization:**
+   Run the EMT optimization algorithm to search for the optimal feature optimization model.
+
+8. **Factor extraction:**
+   Extract the CCD and KNN factors using the Extract_factors method and save them as .pkl files.
+
+9. **Run GML:**
+   Run example.py in the GML module.
 
 More experimental details can be found in the provided code.
