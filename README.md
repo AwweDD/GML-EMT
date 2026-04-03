@@ -49,4 +49,6 @@ wincertstore 0.2
 9. **Run GML:**
    Run example.py in the GML module.
 
+We provide a running example: run GML/example.py
+
 More experimental details can be found in the provided code.
